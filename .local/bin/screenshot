@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cwd=$(pwd)
+cd
+scrot
+mv $(ls ~/*.png) ~/pics/0\ screenshots/
+cd $cwd
+notify-send "Screenshot taken." --icon=image-missing

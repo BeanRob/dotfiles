@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- The root menu. -->
+    <RootMenu onroot="12">
+        <Program icon="terminal" label="Terminal">alacritty</Program>
+        <Menu icon="folder" label="Applications">
+            <Program icon="browser" label="QuteBrowser">qutebrowser</Program>
+            <Program icon="music" label="Music">spotify</Program>
+            <Program icon="discord" label="Discord">discord</Program>
+            <Program icon="steam" label="Steam">steam</Program>
+        </Menu>
+        <Menu icon="folder" label="Utilities">
+            <Program icon="folder" label="Files">pcmanfm</Program>
+            <Program icon="clock" label="Clock">xclock</Program>
+            <Program icon="calc" label="Calculator">xcalc</Program>
+            <Program icon="image" label="Gimp">gimp</Program>
+            <Program icon="vlc" label="VLC">vlc</Program>
+        </Menu>
+        <Menu icon="folder" label="Miscellany">
+            <Program icon="oneko" label="Start Oneko">oneko</Program>
+            <Program icon="kill-oneko" label="Kill Oneko">pkill oneko</Program>
+        </Menu>
+        <Separator/>
+        <Restart label="Restart" icon="restart"/>
+        <Exit label="Exit" confirm="true" icon="shutdown"/> 
+    </RootMenu>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Name>Alacritty</Name>
+        <Name>zathura</Name>
+        <Name>qutebrowser</Name>
+        <Option>centered</Option>
+        <Option>aerosnap</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Name>feh</Name>
+        <Option>notitle</Option>
+        <Option>shaded</Option>
+        <Option>layer:above</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+    </Group>
+    <Group>
+        <Name>discord</Name>
+        <Option>sticky</Option>
+    </Group>
+
+    <!-- Tray at the top. -->
+    <Tray x="0" y="0" screen="1" autohide="off" delay="1000">
+
+        <TrayButton label="[!]" popup="Menu">root:1</TrayButton>
+        <Spacer width="2"/>
+        <Spacer width="2"/>
+
+        <Pager labeled="true"/>
+
+        <Space width="2"/>
+
+        <TrayButton icon="browser16" popup="QuteBrowser">exec:qutebrowser</TrayButton>
+        <TrayButton icon="music16" popup="Music">exec:spotify</TrayButton>
+        <TrayButton icon="discord16" popup="Discord">exec:discord</TrayButton>
+
+        <Space width="2"/>
+
+        <TaskList maxwidth="256"/>
+
+        <Dock/>
+        <Space width="2"/>
+        <Clock format="%H:%M:%S"><Button mask="123">exec:xclock</Button></Clock>
+        <TrayButton popup="Show Desktop" label="[#]">showdesktop</TrayButton>
+
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle decorations="motif">
+        <Font>monospace-12:bold</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#808080</Background>
+        <Opacity>1.0</Opacity>
+        <Active>
+            <Foreground>#F1F1F1</Foreground>
+            <Background>#02108a</Background>
+	        <Outline>#D4D0C7</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <TrayStyle decorations="motif">
+        <Font>monospace-12</Font>
+        <Background>#D4D0C7</Background>
+        <Foreground>#000000</Foreground>
+        <Opacity>1.0</Opacity>
+    </TrayStyle>
+    <TaskListStyle list="all" group="true">
+      <Font>monospace-12</Font>
+      <Active>
+        <Foreground>#000000</Foreground>
+        <Background>#B3B1AD</Background>
+      </Active>
+      <Foreground>#000000</Foreground>
+      <Background>#D4D0C7</Background>
+    </TaskListStyle>
+    <PagerStyle>
+        <Foreground>#000000</Foreground>
+        <Background>#D4D0C7</Background>
+        <Text>#000000</Text>
+        <Active>
+            <Foreground>#000000</Foreground>
+            <Background>#B3B1AD</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle decorations="motif">
+        <Font>monospace-12</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#D4D0C7</Background>
+        <Active>
+            <Foreground>#E6EFFE</Foreground>
+            <Background>#0B226B</Background>
+        </Active>
+        <Opacity>1.0</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>monospace-12</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#999999</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>/home/bean/.config/jwm/icons</IconPath>
+
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="4" height="1">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+        <Background type="command">~/.fehbg</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>sloppy</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="16">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Menu controls -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+
+    <!-- Switch window -->
+    <Key mask="4" key="Tab">nextstacked</Key>
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="4" key="#">desktop#</Key>
+
+    <!-- Summon menu -->
+    <Key mask="4" key="space">root:1</Key>
+    <Key mask="4" key="w">window</Key>
+
+    <!-- Summon terminal -->
+    <Key mask="4" key="Return">exec:alacritty</Key>
+
+    <!-- Current window -->
+    <Key mask="4" key="m">maximize</Key>
+    <Key mask="4" key="n">minimize</Key>
+    <Key mask="4" key="c">exec:dunstctl close-all</Key>
+    <Key mask="4" key="q">close</Key>
+
+    <!-- Move desktop (vi) -->
+    <Key mask="4" key="l">rdesktop</Key>
+    <Key mask="4" key="h">ldesktop</Key>
+    <Key mask="4" key="k">udesktop</Key>
+    <Key mask="4" key="j">ddesktop</Key>
+
+    <!-- Move desktop (arrows) -->
+    <Key mask="4" key="Right">rdesktop</Key>
+    <Key mask="4" key="Left">ldesktop</Key>
+    <Key mask="4" key="Up">udesktop</Key>
+    <Key mask="4" key="Down">ddesktop</Key>
+
+    <!-- Screenshot & media keys -->
+    <Key key="Print">exec:screenshot</Key>
+    <Key key="XF86AudioPlay">exec:playerctl play-pause</Key>
+    <Key key="XF86AudioNext">exec:playerctl next</Key>
+    <Key key="XF86AudioPrev">exec:playerctl previous</Key>
+    <Key key="XF86AudioRaiseVolume">exec:pamixer -i 5 --allow-boost</Key>
+    <Key key="XF86AudioLowerVolume">exec:pamixer -d 5</Key>
+    <Key key="XF86AudioMute">exec:pamixer -t</Key>
+
+    <!-- Mouse bindings -->
+    <Mouse context="title" button="1">move</Mouse>
+    <Mouse context="title" button="2">move</Mouse>
+    <Mouse context="title" button="3">window</Mouse>
+    <Mouse context="title" button="11">maximize</Mouse>
+
+    <Mouse context="icon" button="1">window</Mouse>
+    <Mouse context="icon" button="2">move</Mouse>
+    <Mouse context="icon" button="3">window</Mouse>
+
+    <Mouse context="border" button="1">resize</Mouse>
+    <Mouse context="border" button="2">move</Mouse>
+    <Mouse context="border" button="3">window</Mouse>
+
+    <Mouse context="close" button="-1">close</Mouse>
+    <Mouse context="close" button="2">move</Mouse>
+    <Mouse context="close" button="-3">close</Mouse>
+
+    <Mouse context="maximize" button="-1">maximize</Mouse>
+    <Mouse context="maximize" button="-2">maxv</Mouse>
+    <Mouse context="maximize" button="-3">maxh</Mouse>
+
+    <Mouse context="minimize" button="-1">minimize</Mouse>
+    <Mouse context="minimize" button="2">move</Mouse>
+    <Mouse context="minimize" button="-3">shade</Mouse>
+
+</JWM>
