@@ -5,8 +5,9 @@
 - terminal - alacritty
 - music player - mpd with ncmpcpp
 - web browser - qutebrowser
+- editor - nvim
+    - *note:* configuration for nvim is located in `.config/nvim-custom`. For it to be used in nvim, a symbolic link is needed: `ln -s ../../nvim-custom/ ~/.config/nvim/lua/custom`
+- file manager - ranger
 
 ### Configs Yet to be Added
-- editor - nvim 
-- file manager - ranger
 - fonts - trigon & terminus
