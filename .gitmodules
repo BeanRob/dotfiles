@@ -1,0 +1,6 @@
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/NvChad/NvChad
+[submodule ".config/ranger/plugins/ranger-archives"]
+	path = .config/ranger/plugins/ranger-archives
+	url = https://github.com/maximtrp/ranger-archives

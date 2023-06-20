@@ -46,6 +46,7 @@
     </Group>
     <Group>
         <Name>discord</Name>
+        <Name>xclock</Name>
         <Option>sticky</Option>
     </Group>
 
@@ -157,10 +158,10 @@
     <SnapMode distance="16">border</SnapMode>
 
     <!-- The move mode (outline or opaque) -->
-    <MoveMode>opaque</MoveMode>
+    <MoveMode>outline</MoveMode>
 
     <!-- The resize mode (outline or opaque) -->
-    <ResizeMode>opaque</ResizeMode>
+    <ResizeMode>outline</ResizeMode>
 
     <!-- Menu controls -->
     <Key key="Up">up</Key>
@@ -188,6 +189,8 @@
 
     <!-- Current window -->
     <Key mask="4" key="m">maximize</Key>
+    <Key mask="4" key="y">maxv</Key>
+    <Key mask="4" key="x">maxh</Key>
     <Key mask="4" key="n">minimize</Key>
     <Key mask="4" key="c">exec:dunstctl close-all</Key>
     <Key mask="4" key="q">close</Key>
