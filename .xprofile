@@ -14,9 +14,9 @@ nm-applet &
 # Enable when using MPD
 mpDris2 &
 
-~/.scripts/menus/screens.sh both &
-#~/.scripts/menus/screens.sh both --left &
-~/.scripts/notifications/battery.sh &
+screenmenu both &
+screenmenu both --left &
+battery-notify &
 
 ~/.fehbg &
 xrdb ~/.xresources
