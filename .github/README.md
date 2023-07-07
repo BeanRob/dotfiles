@@ -1,5 +1,8 @@
 # Bean's Dotfiles
 
+## Important!
+I am very soon planning on redoing my Linux install, so there might not be any pushes to this repository for a bit.
+
 ## Programs of Chocie
 - window manager - jwm
 - terminal - alacritty
